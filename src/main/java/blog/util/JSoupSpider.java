@@ -1,6 +1,7 @@
 package blog.util;
 
 
+import blog.entity.Article;
 import blog.entity.User;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -24,7 +25,6 @@ import java.util.List;
  **/
 public class JSoupSpider {
     private static Logger logger = LoggerFactory.getLogger(JSoupSpider.class);
-
     public static List<User> getUsers() {
         Document document = null;
         List<User> userList = new ArrayList<>(100);
@@ -53,4 +53,14 @@ public class JSoupSpider {
         }
         return userList;
     }
+
+//    public static List<Article>(){
+//        Document document = null;
+//        try {
+//            document = Jsoup.connect("https://www.jianshu.com/").get();
+//        } catch (IOException e) {
+//            logger.error("爬取文章信息失败");
+//        }
+//        Element divs = document.getElementsByClass("note-list");
+//    }
 }
